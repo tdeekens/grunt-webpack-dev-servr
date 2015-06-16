@@ -5,6 +5,5 @@ before_install:
   - npm install -g grunt-cli
   - npm link
   - npm link grunt-webpack-dev-server
-  - bower install
 notifications:
   email: false
