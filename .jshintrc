@@ -51,10 +51,14 @@
     "indent": 2,
 
     // Relaxing options
+    "globalstrict": true,
+
     "globals": {
-        "it": true,
-        "describe": true,
+        "afterEach": true,
         "beforeEach": true,
-        "afterEach": true
+        "describe": true,
+        "it": true,
+        "module": true,
+        "require": true
     }
 }
