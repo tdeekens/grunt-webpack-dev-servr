@@ -5,8 +5,8 @@
   "test": [
     "jshint",
     "jscs",
-    "mochacov:html",
-    "mochacov:spec"
+    "mochacov:spec",
+    "mochacov:html"
   ],
   "ci-test": [
     "jshint",
