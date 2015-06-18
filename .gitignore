@@ -6,3 +6,4 @@ npm-debug.log
 .tmp
 .idea
 /test/coverage.html
+/.emacs.js.el
