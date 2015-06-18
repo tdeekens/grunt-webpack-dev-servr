@@ -5,3 +5,4 @@ tasks/.tmp
 npm-debug.log
 .tmp
 .idea
+/test/coverage.html
