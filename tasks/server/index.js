@@ -6,7 +6,7 @@ function Server(_Server, webpack) {
   this._webpackServer = undefined;
 }
 
-Server.prototype.start = function(options) {
+Server.prototype.start = function(options, callback) {
   var _serverOptions = options.server();
   this._webpackServer = new this._Server(
     this._webpack(options.webpack()),
@@ -16,6 +16,9 @@ Server.prototype.start = function(options) {
     if (err) {
       throw err;
     }
+  });
+  this._webpackServer.on('webpackDevServer.started', function() {
+    callback('webpackDevServer.started');
   });
 };
 

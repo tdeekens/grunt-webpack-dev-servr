@@ -8,7 +8,8 @@ var expect = require('chai').expect,
     options,
     webpack,
     webpackServer,
-    server;
+    server,
+    on;
 
 describe('Server', function() {
 
@@ -19,9 +20,10 @@ describe('Server', function() {
     };
     listen = sinon.spy();
     close = sinon.spy();
+    on = sinon.stub();
     webpack = sinon.stub();
     webpackServer = sinon.stub();
-    webpackServer.returns({listen: listen, close: close});
+    webpackServer.returns({listen: listen, close: close, on: on});
   });
 
   it('should create a webpack object using webpack options', function() {
@@ -67,7 +69,6 @@ describe('Server', function() {
     expect(close.callCount).to.equal(1);
   });
 
-
   it('should not stop the server if it was not started before', function() {
     options.server.returns({});
 
@@ -75,5 +76,21 @@ describe('Server', function() {
     server.stop();
 
     expect(close.callCount).to.equal(0);
+  });
+
+  it('listen to and propagate the webpackDevServer.started event', function() {
+    var callback = sinon.spy();
+
+    options.server.returns({});
+
+    on.callsArg(1);
+
+    server = new Server(webpackServer, webpack);
+    server.start(options, callback);
+
+    expect(on.callCount).to.equal(1);
+    expect(on.calledWith('webpackDevServer.started')).to.be.ok;
+    expect(callback.callCount).to.equal(1);
+    expect(callback.calledWith('webpackDevServer.started')).to.be.ok;
   });
 });
