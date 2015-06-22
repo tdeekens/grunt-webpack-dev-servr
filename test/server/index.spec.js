@@ -3,6 +3,7 @@
 var expect = require('chai').expect,
     sinon = require('sinon'),
     Server = require('../../tasks/server'),
+    close,
     listen,
     options,
     webpack,
@@ -17,9 +18,10 @@ describe('Server', function() {
       server: sinon.stub()
     };
     listen = sinon.spy();
+    close = sinon.spy();
     webpack = sinon.stub();
     webpackServer = sinon.stub();
-    webpackServer.returns({listen: listen});
+    webpackServer.returns({listen: listen, close: close});
   });
 
   it('should create a webpack object using webpack options', function() {
@@ -53,5 +55,25 @@ describe('Server', function() {
 
     expect(listen.callCount).to.equal(1);
     expect(listen.firstCall.calledWith('PORT', 'HOST')).to.be.ok;
+  });
+
+  it('should provide a call to stop the server', function() {
+    options.server.returns({});
+
+    server = new Server(webpackServer, webpack);
+    server.start(options);
+    server.stop();
+
+    expect(close.callCount).to.equal(1);
+  });
+
+
+  it('should not stop the server if it was not started before', function() {
+    options.server.returns({});
+
+    server = new Server(webpackServer, webpack);
+    server.stop();
+
+    expect(close.callCount).to.equal(0);
   });
 });
