@@ -6,6 +6,20 @@ var expect = require('chai').expect,
 
 describe('Configuration', function() {
 
+  describe('the generic part', function() {
+    it('should transport the keepAlive option', function() {
+      config = new Config({keepAlive: true});
+
+      expect(config.keepAlive).to.equal(true);
+    });
+
+    it('should default the keepAlive option to false', function() {
+      config = new Config({});
+
+      expect(config.keepAlive).to.equal(false);
+    });
+  });
+
   describe('the webpack part', function() {
 
     it('should offer a webpack config', function() {
@@ -16,12 +30,19 @@ describe('Configuration', function() {
 
     it('should load a webpack config', function() {
       config = new Config({
-        config: '../fixtures/basic.js'
+        config: 'test/fixtures/basic.js'
       });
 
       expect(config.webpack()).to.deep.equal({a: 1});
     });
 
+    it('should reset the output path', function() {
+      config = new Config({
+        output: {path: 'x'}
+      });
+
+      expect(config.webpack().output.path).to.equal('/');
+    });
   });
 
   describe('the server part', function() {
