@@ -24,7 +24,9 @@
     "url": "https://github.com/tdeekens/grunt-webpack-dev-server/issues"
   },
   "homepage": "https://github.com/tdeekens/grunt-webpack-dev-server",
-  "dependencies": {},
+  "dependencies": {
+    "webpack-dev-server-cors": "~1.6.12"
+  },
   "devDependencies": {
     "chai": "^3.0.0",
     "grunt": "^0.4.5",

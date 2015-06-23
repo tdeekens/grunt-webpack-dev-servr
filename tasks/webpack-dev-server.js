@@ -8,19 +8,24 @@
 
 'use strict';
 
-module.exports = function(grunt) {
-  var
+var webpackServer = require('webpack-dev-server-cors'),
+    webpack = require('webpack'),
+    Config = require('./config'),
     Server = require('./server');
 
+module.exports = function(grunt) {
+
   grunt.registerTask('webpack-dev-server', 'A grunt task to start a webpack-dev-server.', function() {
-    //Grunt related initialization
-    var
-      options = this.options({}),
-      server = new Server(options),
-      done = this.async();
+    var options = new Config(this.options({})),
+        server = new Server(webpackServer, webpack),
+        done;
 
-    server.noop();
+    done = this.async();
 
-    done();
+    server.start(options, function(event) {
+      if (event === 'webpackDevServer.started' && !options.keepAlive) {
+        done();
+      }
+    });
   });
 };
