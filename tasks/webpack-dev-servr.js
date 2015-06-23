@@ -15,7 +15,7 @@ var webpackServer = require('webpack-dev-server-cors'),
 
 module.exports = function(grunt) {
 
-  grunt.registerMultiTask('webpack-dev-server', 'A grunt task to start a webpack-dev-server.', function() {
+  grunt.registerMultiTask('webpack-dev-servr', 'A grunt task to start a webpack-dev-server.', function() {
     var options = new Config(this.options({})),
         server = new Server(webpackServer, webpack),
         done;
