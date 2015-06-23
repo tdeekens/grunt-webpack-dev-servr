@@ -43,6 +43,93 @@ describe('Configuration', function() {
 
       expect(config.webpack().output.path).to.equal('/');
     });
+
+    it('should merge a base webpack config with overrides', function() {
+      config = new Config(
+        {
+          a: 'a',
+          webpack: {
+            a: 'b'
+          }
+        }
+      );
+
+      expect(config.webpack().a).to.equal('b');
+    });
+
+    it('should merge a base webpack config array with override array', function() {
+      config = new Config(
+        {
+          a: ['a'],
+          webpack: {
+            a: ['b']
+          }
+        }
+      );
+
+      expect(config.webpack().a).to.deep.equal(['b', 'a']);
+    });
+
+    it('should merge a base webpack config with override array', function() {
+      config = new Config(
+        {
+          a: 'a',
+          webpack: {
+            a: ['b']
+          }
+        }
+      );
+
+      expect(config.webpack().a).to.deep.equal(['b', 'a']);
+    });
+
+    it('should merge a base webpack config array with an override value', function() {
+      config = new Config(
+        {
+          a: ['a'],
+          webpack: {
+            a: 'b'
+          }
+        }
+      );
+
+      expect(config.webpack().a).to.deep.equal(['a', 'b']);
+    });
+
+    it('should merge a base webpack config object with an override object', function() {
+      config = new Config(
+        {
+          a: {
+            a: 'a'
+          },
+          webpack: {
+            a: {
+              b: 'b'
+            }
+          }
+        }
+      );
+
+      expect(config.webpack().a).to.deep.equal({a: 'a', b: 'b'});
+    });
+
+    it('should recursively merge a base webpack config object with an override object', function() {
+      config = new Config(
+        {
+          a: {
+            a: 'a'
+          },
+          webpack: {
+            a: {
+              a: 'b'
+            }
+          }
+        }
+      );
+
+      expect(config.webpack().a).to.deep.equal({a: 'b'});
+    });
+
   });
 
   describe('the server part', function() {
