@@ -25,7 +25,7 @@
   },
   "homepage": "https://github.com/tdeekens/grunt-webpack-dev-servr",
   "dependencies": {
-    "webpack-dev-server-cors": "~1.6.12"
+    "webpack-dev-server-cors": "~1.8.0"
   },
   "devDependencies": {
     "chai": "^3.0.0",
