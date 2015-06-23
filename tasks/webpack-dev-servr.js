@@ -1,6 +1,6 @@
 /*
-* grunt-webpack-dev-server
-* https://github.com/tdeekens/grunt-webpack-dev-server
+* grunt-webpack-dev-servr
+* https://github.com/tdeekens/grunt-webpack-dev-servr
 *
 * Copyright (c) 2015 E-POST Development GmbH
 * Licensed under the BSD license.

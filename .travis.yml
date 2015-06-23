@@ -4,6 +4,6 @@ node_js:
 before_install:
   - npm install -g grunt-cli
   - npm link
-  - npm link grunt-webpack-dev-server
+  - npm link grunt-webpack-dev-servr
 notifications:
   email: false

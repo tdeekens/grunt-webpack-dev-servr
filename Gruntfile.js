@@ -4,7 +4,7 @@ module.exports = function(grunt) {
 
   require('time-grunt')(grunt);
 
-  grunt.loadNpmTasks('grunt-webpack-dev-server');
+  grunt.loadNpmTasks('grunt-webpack-dev-servr');
 
   var path = require('path');
 

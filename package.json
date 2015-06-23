@@ -1,5 +1,5 @@
 {
-  "name": "grunt-webpack-dev-server",
+  "name": "grunt-webpack-dev-servr",
   "version": "0.1.0",
   "description": "A grunt task to start a webpack-dev-server.",
   "scripts": {
@@ -21,9 +21,9 @@
   ],
   "license": "BSD",
   "bugs": {
-    "url": "https://github.com/tdeekens/grunt-webpack-dev-server/issues"
+    "url": "https://github.com/tdeekens/grunt-webpack-dev-servr/issues"
   },
-  "homepage": "https://github.com/tdeekens/grunt-webpack-dev-server",
+  "homepage": "https://github.com/tdeekens/grunt-webpack-dev-servr",
   "dependencies": {
     "webpack-dev-server-cors": "~1.6.12"
   },
