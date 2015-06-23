@@ -49,3 +49,4 @@ Developing on the task alone is fairly easy just `git clone https://github.com/t
 
 ## Release History
 - 0.0.0 Development version without release
+- 0.1.0 Initial release
