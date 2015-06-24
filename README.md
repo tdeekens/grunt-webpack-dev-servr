@@ -1,14 +1,16 @@
 # grunt-webpack-dev-servr
 
-**Note: This grunt plugin is under current development and not ready for use just now!**
-
 > A grunt task to start a webpack-dev-server.
 
-[![NPM](https://nodei.co/npm/grunt-webpack-dev-servr.png?mini=true)](https://nodei.co/npm/grunt-webpack-dev-servr/)
+> Why this task is needed...
+
+> This task depends on a special fork of the webpack-dev-server to ensure that a subsequent task only starts whenever the server is up and running. This is particularly useful for E2E testing in which e.g. an Protractor run needs the server running.
 
 [![Build Status](https://travis-ci.org/tdeekens/grunt-licensy.svg?branch=master)](https://travis-ci.org/tdeekens/grunt-webpack-dev-servr)
 [![Coverage Status](https://coveralls.io/repos/tdeekens/grunt-licensy/badge.png)](https://coveralls.io/r/tdeekens/grunt-webpack-dev-servr)
 [![Dependency Status](https://david-dm.org/tdeekens/grunt-licensy.svg?style=flat)](https://david-dm.org/tdeekens/grunt-webpack-dev-servr)
+
+[![NPM](https://nodei.co/npm/grunt-webpack-dev-servr.png)](https://nodei.co/npm/grunt-webpack-dev-servr/)
 
 ## Getting Started
 This plugin requires Grunt `~0.4.2`
@@ -25,7 +27,7 @@ Once the plugin has been installed, it may be enabled inside your Gruntfile with
 grunt.loadNpmTasks('grunt-webpack-dev-servr');
 ```
 
-## The "webpack-dev-server" task
+## The "webpack-dev-servr" task
 
 ### Overview
 In your project's Gruntfile, the `webpack-dev-server` task is available to use.
@@ -35,8 +37,11 @@ Or add it to an existing task: `grunt.registerTask('test', ['clean', 'webpack-de
 
 ### Options
 
+[Please refer to the standard webpack-dev-server options...](http://webpack.github.io/docs/webpack-dev-server.html#api)
+
 ```javascript
 {
+  // Any configuration the webpack-dev-server itself supports.
 }
 ```
 
@@ -51,3 +56,4 @@ Developing on the task alone is fairly easy just `git clone https://github.com/t
 - 0.0.0 Development version without release
 - 0.1.0 Initial release
 - 0.1.1
+- 0.1.2 Prevent `started`-Event being fired twice
