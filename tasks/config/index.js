@@ -45,7 +45,7 @@ function Config(config) {
   }
 
   if (this._config.webpack.devServer) {
-    this._config.server = merge(this._config.webpack.devServer, config.webpack.devServer);
+    this._config.server = merge(this._config.webpack.devServer, config.webpack && config.webpack.devServer);
   }
 
   this._config.server.host = config.host || 'localhost';
