@@ -46,7 +46,7 @@ describe('Server', function() {
     server.start(options);
 
     expect(webpackServer.callCount).to.equal(1);
-    expect(webpackServer.firstCall.calledWith('WEBPACK', 'OPTIONS')).to.be.ok;
+    expect(webpackServer.firstCall.calledWith('WEBPACK', {options: 'OPTIONS'})).to.be.ok;
   });
 
   it('should listen to the given host and port', function() {

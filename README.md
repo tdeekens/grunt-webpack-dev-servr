@@ -57,3 +57,4 @@ Developing on the task alone is fairly easy just `git clone https://github.com/t
 - 0.1.0 Initial release
 - 0.1.1
 - 0.1.2 Prevent `started`-Event being fired twice
+- 0.1.3 Fix webpack.devServer options being passed into server

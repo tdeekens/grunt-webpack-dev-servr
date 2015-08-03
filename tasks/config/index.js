@@ -44,6 +44,10 @@ function Config(config) {
     this._config.webpack.output.path = '/';
   }
 
+  if (this._config.webpack.devServer) {
+    this._config.server = merge(this._config.webpack.devServer, config.webpack.devServer);
+  }
+
   this._config.server.host = config.host || 'localhost';
   this._config.server.port = config.port || 8080;
 

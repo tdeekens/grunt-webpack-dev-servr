@@ -7,16 +7,22 @@ function Server(_Server, webpack) {
 }
 
 Server.prototype.start = function(options, callback) {
-  var _serverOptions = options.server();
+  var
+    _serverOptions = options.server();
+
   this._webpackServer = new this._Server(
-    this._webpack(options.webpack()),
-    _serverOptions.options
+    this._webpack(
+      options.webpack()
+    ),
+    _serverOptions
   );
+
   this._webpackServer.listen(_serverOptions.port, _serverOptions.host, function(err) {
     if (err) {
       throw err;
     }
   });
+
   this._webpackServer.on('webpackDevServer.started', function() {
     callback('webpackDevServer.started');
   });
