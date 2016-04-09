@@ -29,9 +29,9 @@
   },
   "devDependencies": {
     "chai": "^3.5.0",
-    "grunt": "^0.4.5",
+    "grunt": "^1.0.1",
     "grunt-contrib-jshint": "^1.0.0",
-    "grunt-contrib-watch": "^0.6.1",
+    "grunt-contrib-watch": "^1.0.0",
     "grunt-jscs": "^2.7.0",
     "grunt-mocha-cov": "^0.4.0",
     "grunt-mocha-test": "^0.12.7",
@@ -43,8 +43,8 @@
     "time-grunt": "^1.3.0"
   },
   "peerDependencies": {
-    "grunt": "~0.4.2",
-    "grunt-cli": "~0.1.1"
+    "grunt": ">=0.4.0",
+    "grunt-cli": ">=0.1.13"
   },
   "config": {
     "blanket": {
