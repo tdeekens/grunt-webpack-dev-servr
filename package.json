@@ -1,6 +1,6 @@
 {
   "name": "grunt-webpack-dev-servr",
-  "version": "0.1.6",
+  "version": "1.0.0",
   "description": "A grunt task to start a webpack-dev-server.",
   "scripts": {
     "test": "grunt ci-test"
@@ -8,6 +8,10 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/tdeekens/grunt-webpack-dev-servr.git"
+  },
+  "engines": {
+    "node": ">= 4.0.0",
+    "npm": ">= 3.5.0"
   },
   "keywords": [
     "grunt",
@@ -19,28 +23,30 @@
     "Gunnar Wrobel <Gunnar.Wrobel@epost-dev.de>",
     "Tobias Deekens <Tobias.Deekens@epost-dev.de> (http://tdeekens.name)"
   ],
-  "license": "BSD",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/tdeekens/grunt-webpack-dev-servr/issues"
   },
   "homepage": "https://github.com/tdeekens/grunt-webpack-dev-servr",
   "dependencies": {
-    "webpack-dev-server-cors": "~1.14.3"
+    "webpack-dev-server-cors": "1.14.3"
   },
   "devDependencies": {
-    "chai": "^3.5.0",
-    "grunt": "^1.0.1",
-    "grunt-contrib-jshint": "^1.0.0",
-    "grunt-contrib-watch": "^1.0.0",
-    "grunt-jscs": "^2.7.0",
-    "grunt-mocha-cov": "^0.4.0",
-    "grunt-mocha-test": "^0.12.7",
-    "jscs": "^2.10.1",
-    "jshint": "^2.9.1",
-    "load-grunt-config": "^0.19.1",
-    "mocha": "^2.4.5",
-    "sinon": "^1.15.3",
-    "time-grunt": "^1.3.0"
+    "chai": "3.5.0",
+    "grunt": "1.0.1",
+    "grunt-cli": "1.2.0",
+    "grunt-contrib-jshint": "1.0.0",
+    "grunt-contrib-watch": "1.0.0",
+    "grunt-jscs": "2.8.0",
+    "grunt-mocha-cov": "0.4.0",
+    "grunt-mocha-test": "0.12.7",
+    "jscs": "2.11.0",
+    "jshint": "2.9.1",
+    "load-grunt-config": "firstandthird/load-grunt-config#bc1f14e",
+    "mocha": "2.4.5",
+    "sinon": "1.17.3",
+    "time-grunt": "1.3.0",
+    "webpack": "1.12.14"
   },
   "peerDependencies": {
     "grunt": ">=0.4.0",
